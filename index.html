@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Мой магазин </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <h1>Добро пожаловать в мой магазин!</h1>
+        <div class="cart-info">
+            <span> | Сумма: <strong id="cart-total">0</strong> юаней</span>
+            <button id="toggle-cart-btn" class="toggle-cart-btn">🛒 Показать корзину</button>
+        </div>
+    </header>
+
+    <!-- Модальное окно корзины -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h2>Ваша корзина</h2>
+                <button id="close-cart-btn" class="close-btn">&times;</button>
+            </div>
+            <div id="cart-items" class="cart-items">
+                <p style="text-align: center; color: #999;">Корзина пуста</p>
+            </div>
+            <div class="cart-modal-footer">
+                <button id="clear-cart-btn" class="clear-cart-btn" onclick="clearCart()">Очистить корзину</button>
+                <button id="checkout-btn" class="checkout-btn">Оформить покупку</button>
+            </div>
+        </div>
+    </div>
+    
+    <!--Главный лайаут-->
+    <div class="container">
+        
+        <!-- Боковая панель -->
+            <aside class="sidebar">
+                
+                <a href="#" onclick="showCategory(event, 'kids')">Детские товары</a>
+                <a href="#" onclick="showCategory(event, 'home')">Товары для дома и кухни</a>
+                <a href="#" onclick="showCategory(event, 'stationery')">Канцелярские товары</a>
+                <a href="#" onclick="showCategory(event, 'accessories')">Аксессуары для взрослых</a>
+                <a href="#" onclick="showCategory(event, 'hygiene')">Товары для гигиены и бытовых нужд</a>
+            </aside>
+            
+            <main>
+                <section class="category active" id="kids">
+                    <h2>👶 Детские товары</h2>
+                </section>
+                <section class="category" id="home">
+                    <h2>🏠 Товары для дома и кухни</h2>
+                </section>
+                <section class="category" id="stationery">
+                    <h2>✏️ Канцелярские товары</h2>
+                </section>
+                <section class="category" id="accessories">
+                    <h2>👔 Аксессуары для взрослых</h2>
+                </section>
+                <section class="category" id="hygiene">
+                    <h2>🧼 Товары для гигиены и бытовых нужд</h2>
+                </section>
+            </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
